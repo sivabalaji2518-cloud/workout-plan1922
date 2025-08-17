@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Gym Buddy - Daily Workout Plan</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      background: #f4f6f9;
+      text-align: center;
+      padding: 20px;
+    }
+    h1 {
+      color: #2c3e50;
+    }
+    .option {
+      margin: 10px;
+      padding: 15px;
+      border: 2px solid #2c3e50;
+      border-radius: 8px;
+      cursor: pointer;
+      display: inline-block;
+      transition: 0.3s;
+    }
+    .option:hover {
+      background: #2c3e50;
+      color: white;
+    }
+    #plan {
+      margin-top: 30px;
+      padding: 20px;
+      background: white;
+      border-radius: 10px;
+      box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+      display: none;
+    }
+  </style>
+</head>
+<body>
+  <h1>💪 Gym Buddy: Free Daily Workout Plan</h1>
+  <p>Select your personality type to get a workout plan:</p>
+
+  <div class="option" onclick="showPlan('beginner')">🔥 Beginner (New to Gym)</div>
+  <div class="option" onclick="showPlan('builder')">💥 Bodybuilder (Strength)</div>
+  <div class="option" onclick="showPlan('athlete')">⚡ Athlete (Endurance)</div>
+  <div class="option" onclick="showPlan('relaxed')">🧘 Relaxed (Casual Fitness)</div>
+
+  <div id="plan"></div>
+
+  <script>
+    function showPlan(type) {
+      let planText = "";
+      if (type === "beginner") {
+        planText = `
+          <h2>🔥 Beginner Plan</h2>
+          <p>✔ 10 min warm-up (treadmill)</p>
+          <p>✔ Push-ups: 3 sets x 10 reps</p>
+          <p>✔ Squats: 3 sets x 12 reps</p>
+          <p>✔ Plank: 3 x 30 sec</p>
+          <p>✔ Cool down stretches</p>
+        `;
+      } else if (type === "builder") {
+        planText = `
+          <h2>💥 Bodybuilder Plan</h2>
+          <p>✔ Bench Press: 4 sets x 8 reps</p>
+          <p>✔ Deadlifts: 4 sets x 6 reps</p>
+          <p>✔ Bicep Curls: 3 sets x 12 reps</p>
+          <p>✔ Leg Press: 4 sets x 10 reps</p>
+          <p>✔ Abs Circuit: 15 min</p>
+        `;
+      } else if (type === "athlete") {
+        planText = `
+          <h2>⚡ Athlete Plan</h2>
+          <p>✔ 20 min HIIT cardio</p>
+          <p>✔ Pull-ups: 4 sets x 12 reps</p>
+          <p>✔ Lunges: 3 sets x 15 reps</p>
+          <p>✔ Burpees: 3 sets x 15 reps</p>
+          <p>✔ Sprints: 10 x 100m</p>
+        `;
+      } else if (type === "relaxed") {
+        planText = `
+          <h2>🧘 Relaxed Fitness Plan</h2>
+          <p>✔ 15 min light jogging</p>
+          <p>✔ Yoga stretches: 20 min</p>
+          <p>✔ Push-ups: 2 sets x 8 reps</p>
+          <p>✔ Plank: 2 x 20 sec</p>
+          <p>✔ Relaxing walk</p>
+        `;
+      }
+      document.getElementById("plan").innerHTML = planText;
+      document.getElementById("plan").style.display = "block";
+    }
+  </script>
+</body>
+</html>
